@@ -1,0 +1,313 @@
+@font-face {
+	font-family: 'Lora';
+	src: url('../fonts/Lora/Lora-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Nunito';
+	src: url('../fonts/Nunito/Nunito-Regular.ttf') format('truetype');
+}
+
+html, body{
+	font-family: 'Lora';
+/*    height: 100%;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito';
+}
+
+
+
+.navbar-toggler:focus, .navbar-toggler:hover {
+  outline: none;
+}
+
+.navbar-toggler{
+	border:none;
+	background: transparent;
+} 
+
+.nav-item{
+    font-family: 'Nunito';
+}
+
+#landing-about-section{
+    
+    background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6)), url('../img/about-landing.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    max-width: 100%;
+/*    height: 80%;*/
+    color: white;
+    
+    display: flex;
+    align-items: center;
+    
+    
+    padding-top: 1.5rem;
+    
+    padding-bottom: 1.5rem;
+    
+}
+
+#landing-about-section .container {
+    max-width: 50rem;
+}
+
+
+#landing-name{
+    
+}
+
+#landing-position{
+    padding-top: 1rem;
+}
+
+#landing-description{
+    padding-top: 1rem;
+}
+
+
+#landing-contact{
+    padding-top: 1rem;
+}
+#landing-social{
+    padding-top: 1rem;
+}
+
+.swiper-container {
+	margin-left: 1em;
+	width: 100%;
+	height: 44px;
+}
+	
+.swiper-slide {
+    
+    font-family: 'Nunito';
+	text-align: left;
+	font-size: 40px;
+	
+	display: -webkit-box;
+	display:-ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	
+	-webkit-box-pack: start;
+	-ms-flex-pack: flex-start;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+
+}
+
+#slide-position{
+	width: auto;
+}
+
+
+/* swiper project */
+.swiper-project {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+}
+.swiper-project-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+}
+
+
+
+
+#skill-section{
+    padding-top: 2rem;
+    
+    padding-bottom: 2rem;
+}
+
+#skill-section p{
+    padding-top: 1.25rem;
+}
+
+
+#focus-pyramid-section {
+    
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-image: url("../img/focus-pyramid.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: white;
+    max-width: 100%;
+    
+}
+
+
+
+
+
+#pyramid-title{
+    color:#FF8400;
+}
+
+#focus-pyramid-section h5{
+    text-align: center;
+}
+
+.focus-level{
+    padding-top: 2rem;
+}
+
+
+#focus-pyramid-right{
+    padding-top: 2rem;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+
+
+
+
+#product-section{
+    padding-top: 2rem;
+    
+    padding-bottom: 2rem;
+}
+
+#product-section p{
+    padding-top: 1.25rem;
+}
+
+
+
+#section-thanks{
+    
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    
+    
+    display: flex;
+    align-items: center;
+}
+
+#section-thanks p{
+    margin-top: 1rem;
+}
+
+#section-thanks a{
+    margin-top: 4rem;
+}
+
+
+#footer-section{
+    
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: black;
+    color: white;
+}
+
+.footer-item{
+    
+    font-family: 'Nunito';
+}
+
+.footer-item a{
+    color:white;
+}
+
+.footer-item a, u {
+    text-decoration: none;
+}
+
+.footer-item a:visited{
+    color:white;
+}
+
+.footer-item a:hover{
+    color:white;
+}
+
+.footer-item a:active{
+    color:white;
+}
+
+
+
+
+#footer-copyright{
+    margin-top: 2.5rem;
+}
+
+
+
+
+@media (max-width: 575px) {
+
+    .focus-card{
+        margin-top: 1rem;
+    }
+    
+    #focus-pyramid-section h5{
+        text-align: left;
+    }
+    
+    #footer-logo{
+        margin-bottom: 2rem;
+    }
+    
+}
+
+@media (max-width: 767px) {
+
+  
+    #footer-logo{
+        margin-bottom: 2rem;
+    }
+    
+}
+
+/*Medium devices (tablets, less than 992px)*/
+@media (max-width: 991px) { 
+    #focus-pyramid-section{
+        background: black;
+    }
+    
+   
+
+}
+
+
+
+
+
