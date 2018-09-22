@@ -21,11 +21,13 @@ app.use(
 app.use(express.static('public'));
 app.get('*', (req, res) => {
     const store = createStore(req);
-
     const promises = matchRoutes(Routes, req.path)
     .map(({ route }) => {
-        return route.loadData ? route.loadData(store) : true;
+        console.log('route map called' + route.loadData);
+        console.log(store);
+        return route.loadData ? route.loadData(store) : null;
     }).map(promise => {
+        console.log(`promise is ${promise}`)
         if (promise) {
             return new Promise((resolve, reject) => {
                 promise.then(resolve).catch(resolve);
@@ -33,11 +35,13 @@ app.get('*', (req, res) => {
         }
     });
 
+    console.log('get......' + req.path);
     Promise.all(promises).then(() => {
         const context = {};
         const content = renderer(req, store, context);
 
         console.log(context);
+        console.log('context is...')
         if (context.url) {
             return res.redirect(301, context.url);
         }

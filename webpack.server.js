@@ -6,7 +6,7 @@ const config = {
 
     //Inform webpack that we're building a bundle
     //for nodeJS, rather than for the browser
-    // mode: 'development',
+    mode: 'development',
     target: 'node',
     entry: './src/index.js',
 

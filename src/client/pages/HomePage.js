@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Home = () => {
-
     console.log('Im Home');
     return (
         <div className="center-align" style={{ marginTop: '200px' }}>
