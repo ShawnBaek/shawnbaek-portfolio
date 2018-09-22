@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App';
 import HomePage from './pages/HomePage';
-import UsersListPage from './pages/UsersListPage';
+import PostsListPage from './pages/PostsListPage';
 import NotFoundPage from './pages/NotFoundPage';
 import AdminsListPage from './pages/AdminsListPage';
 
@@ -19,8 +19,8 @@ export default [
           path: '/admins'
         },
         {
-          ...UsersListPage,
-          path: '/users'
+          ...PostsListPage,
+          path: '/postsList'
         },
         {
           ...NotFoundPage
