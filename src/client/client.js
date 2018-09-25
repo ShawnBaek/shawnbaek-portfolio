@@ -14,7 +14,7 @@ import reducers from './reducers';
   const axiosInstance = axios.create({
     baseURL: '/api'
   });
-  
+  console.log(axiosInstance);
   const store = createStore(
     reducers,
     window.INITIAL_STATE,

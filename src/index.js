@@ -7,10 +7,11 @@ import renderer from './helpers/renderer';
 import createStore from './helpers/createStore';
 
 const app = express();
-
+// http://react-ssr-api.herokuapp.com
+//https://public-api.wordpress.com/rest/v1.1/sites/uxengineer.wordpress.com
 app.use(
     '/api', 
-    proxy('https://shawnbaek.com', {
+    proxy('https://shawnbaek.com/wp-json/wp/v2', {
         proxyReqOptDecorator(opts) {
             opts.headers['x-forwarded-host'] = 'localhost:3000';
             return opts;
@@ -21,27 +22,21 @@ app.use(
 app.use(express.static('public'));
 app.get('*', (req, res) => {
     const store = createStore(req);
+    console.log('req is ' +store);
     const promises = matchRoutes(Routes, req.path)
     .map(({ route }) => {
-        console.log('route map called' + route.loadData);
-        console.log(store);
         return route.loadData ? route.loadData(store) : null;
     }).map(promise => {
-        console.log(`promise is ${promise}`)
         if (promise) {
             return new Promise((resolve, reject) => {
                 promise.then(resolve).catch(resolve);
             });
         }
     });
-
-    console.log('get......' + req.path);
     Promise.all(promises).then(() => {
         const context = {};
         const content = renderer(req, store, context);
 
-        console.log(context);
-        console.log('context is...')
         if (context.url) {
             return res.redirect(301, context.url);
         }

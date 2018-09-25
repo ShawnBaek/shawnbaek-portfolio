@@ -4,9 +4,8 @@ import axios from 'axios';
 import reducers from '../client/reducers';
 
 export default (req) => {
-
     const axiosInstance = axios.create({
-        baseURL: 'http://shawnbaek.com',
+        baseURL: 'https://shawnbaek.com/wp-json/wp/v2',
         headers: { cookie: req.get('cookie') || '' }
     });
 
