@@ -11,7 +11,7 @@ const app = express();
 //https://public-api.wordpress.com/rest/v1.1/sites/uxengineer.wordpress.com
 app.use(
     '/api', 
-    proxy('https://shawnbaek.com/wp-json/wp/v2', {
+    proxy('https://public-api.wordpress.com', {
         proxyReqOptDecorator(opts) {
             opts.headers['x-forwarded-host'] = 'localhost:3000';
             return opts;
@@ -22,7 +22,6 @@ app.use(
 app.use(express.static('public'));
 app.get('*', (req, res) => {
     const store = createStore(req);
-    console.log('req is ' +store);
     const promises = matchRoutes(Routes, req.path)
     .map(({ route }) => {
         return route.loadData ? route.loadData(store) : null;
@@ -43,7 +42,6 @@ app.get('*', (req, res) => {
         if (context.notFound) {
             res.status(404);
         }
-
         res.send(content);
     });
 });

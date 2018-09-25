@@ -6,8 +6,9 @@ import _ from 'lodash';
 
 class PostsListPage extends Component {
     componentDidMount(){
-        console.log('Posts is called')
         this.props.fetchPostsList();
+        console.log('Post fetched');
+        console.log(this.props);
     }
 
     renderPosts(){
@@ -15,35 +16,31 @@ class PostsListPage extends Component {
         //     return <li key={user.id}>{user.name}</li>;
         // })
 
-        console.log('renderPosts is called');
+        console.log('renderPosts2 is called');
+        console.log(this.props);
         return _.map(this.props.posts, post => {
 
             const url = `/blog/${post.id}`;
-            const title =  _.result(post, 'title.rendered');
-            const postId = _.result(post, 'id');
-            console.log('--------------')
+            const title =  _.result(post, 'title');
+            const postId = _.result(post, 'ID');
+            console.log(title);
+            console.log(postId);
             return (
                 // <div key={post.id}>{post.id}</div>
 
                 <li className="list-group-item" key={postId}>
-                
-                    <Link to={url}>
-                        {title}
-                    </Link>
-                
+                    {title}
                 </li>
             );
         });
     }
 
     render(){
-        console.log("BlogPage: " + this.props);
+        console.log('render function and posts');
+        console.log(this.props.posts);
         return (
             <div>
-                {/* <Helmet>
-                    <title>{`${this.props.users.length} Users Loaded`}</title>
-                    <meta property="og:title" content="Users App" />
-                </Helmet> */}
+            
                 Here's a big list of users:
                 <ul>{this.renderPosts()}</ul>
             </div>
@@ -52,7 +49,9 @@ class PostsListPage extends Component {
 }
 
 function mapStateToProps(state){
-    return { users: state.users };
+    console.log('mapStateToProps');
+    console.log(state);
+    return { posts: state.posts };
 }
 
 function loadData(store) {

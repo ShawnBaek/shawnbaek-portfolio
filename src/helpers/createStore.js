@@ -5,10 +5,9 @@ import reducers from '../client/reducers';
 
 export default (req) => {
     const axiosInstance = axios.create({
-        baseURL: 'https://shawnbaek.com/wp-json/wp/v2',
+        baseURL: 'https://public-api.wordpress.com/rest/v1.1/sites/uxengineer.wordpress.com',
         headers: { cookie: req.get('cookie') || '' }
     });
-
     const store = createStore(
         reducers, 
         {}, 
