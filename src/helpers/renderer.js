@@ -22,7 +22,7 @@ export default (req, store, context) => {
             <head>
             ${helmet.title.toString()}
             ${helmet.meta.toString()}
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+            <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
             </head>
             <body>
                 <div id="root">${content}</div>

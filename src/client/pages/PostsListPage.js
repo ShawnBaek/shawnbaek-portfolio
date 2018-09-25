@@ -23,13 +23,12 @@ class PostsListPage extends Component {
             const url = `/blog/${post.id}`;
             const title =  _.result(post, 'title');
             const postId = _.result(post, 'ID');
-            console.log(title);
-            console.log(postId);
+            const author = _.result(post, 'author');
+            
             return (
                 // <div key={post.id}>{post.id}</div>
-
                 <li className="list-group-item" key={postId}>
-                    {title}
+                    {post.title}
                 </li>
             );
         });
@@ -49,8 +48,6 @@ class PostsListPage extends Component {
 }
 
 function mapStateToProps(state){
-    console.log('mapStateToProps');
-    console.log(state);
     return { posts: state.posts };
 }
 

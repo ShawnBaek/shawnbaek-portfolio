@@ -7,13 +7,12 @@ const config = {
     //Tell webpack the root file of our
     //server application
     entry: './src/client/client.js',
-
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'public')
-    }
+    },
+    
 };
-
 
 module.exports = merge(baseConfig, config);
 
