@@ -1,5 +1,7 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config';
+// import '../styles/index.css';
+import './styles/styles.scss';
 import Header from './components/Header';
 // import { fetchCurrentUser } from './actions';
 

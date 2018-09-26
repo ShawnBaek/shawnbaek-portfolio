@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     module: {
         rules: [
@@ -12,7 +13,7 @@ module.exports = {
                         ['env', { target: { browsers: ['last 2 versions'] }}]
                     ]
                 }
-            }
+            },
         ]
     }
 };

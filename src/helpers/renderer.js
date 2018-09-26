@@ -22,7 +22,6 @@ export default (req, store, context) => {
             <head>
             ${helmet.title.toString()}
             ${helmet.meta.toString()}
-            <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
             </head>
             <body>
                 <div id="root">${content}</div>
